@@ -6,7 +6,6 @@ const Dishes = require('../models/dishes');
 dishRouter.use(bodyParser.json());
 
 dishRouter.route('/')
-
 .get((req,res,next) => {
     Dishes.find({})
         .then((dish) => {
