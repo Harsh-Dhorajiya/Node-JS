@@ -43,6 +43,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// function auth(req,res,next) {
+//   if(!req.user){
+//     var err = new Error('You are not authenticated');
+//     err.status = 403;
+//     return next(err);
+//   }else{
+//     next();
+//   }
+// }
+//app.use(auth);
 app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/leaders', leaderRouter);
